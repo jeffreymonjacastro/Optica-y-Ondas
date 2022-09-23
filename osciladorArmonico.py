@@ -1,3 +1,5 @@
+import matplotlib
+
 """
 Experimento (8 puntos)
   1. Ejecute el archivo osciladorArmonico.py.
@@ -13,8 +15,19 @@ Experimento (8 puntos)
     e. Guarde el gráfico en formato png con un nombre descriptivo de forma automática (su código debe realizar este paso).
 """
 
-print("Hello World")
+import numpy as np
 
-def hola():
-    return "hola"
+# Definir Constantes
+k = 500
+
+# Pedir valor de masa (en gramos) para tensar la cuerda
+mGramos = input("Ingrese un valor entero entre 500 y 1000: ")
+m = int(mGramos) * (10 ** (-3))
+
+# Calcular los parametros del oscilador
+w = np.sqrt(k/m)
+f = w/(2*np.pi)
+
+print("La frecuencia de oscilación del sistema es: ", f)
+
 
