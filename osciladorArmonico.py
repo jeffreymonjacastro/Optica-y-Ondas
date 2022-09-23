@@ -14,3 +14,6 @@ Experimento (8 puntos)
 """
 
 print("Hello World")
+
+def hola():
+    return "hola"
