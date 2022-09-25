@@ -43,7 +43,7 @@ def tabulacion(base_datos, esp=2):
 pass
 
 
-data = [["masa(kg)", "w", "Frecuencia(Hz)"]];
+data = [["masa(kg)", "w", "Frecuencia(Hz)"]]
 
 for x in range(int(input("Cuantos datos va a ingresar: "))):
 
