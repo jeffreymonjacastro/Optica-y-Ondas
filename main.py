@@ -5,15 +5,25 @@ from math import *
 
 data = read("datos.txt")
 imagen = []
+grosor = 1
+escala = 400
 
-for x in range(600):
+for y in range(600):
 	imagen.append([])
-	for y in range(600):
-		f = frecuencia(1 if y==0 else y);
-		dibujar = x == round(f)
-		imagen[x].append([0,0,0] if (dibujar) else [255,255,255])
+	for x in range(1200):
+		imagen[y].append([255,255,255])
+		if y < round(escala*frecuencia(x-grosor)+grosor):
+			imagen[y][x] = [0,0,0]
 		pass
+		if y < round(escala*frecuencia(x+grosor)-grosor):
+			imagen[y][x] = [255,255,255]
+		pass
+		if ((x>=-grosor and x <= grosor) and y>=round(escala*frecuencia(x-grosor))):
+			imagen[y][x] = [0,0,0]
+		pass
+
 	pass
+
 
 imagen.reverse()
 

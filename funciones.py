@@ -10,5 +10,13 @@ def read(nombre):
 
 
 def frecuencia(m):
-  f = np.sqrt(500/m)/(2*np.pi)
-  return f
+  if m==0:
+    return frecuencia(m+1)
+  f = np.sqrt(abs(500/m))/(2*np.pi)
+  return (f)
+
+def masa(f):
+  if f==0:
+    return frecuencia(f+1)
+  m = 500/((f*2*np.pi)**2)
+  return m
