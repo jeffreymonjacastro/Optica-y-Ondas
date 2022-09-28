@@ -1,3 +1,5 @@
+import numpy as np
+import math
 def read(nombre):
   with open(nombre, "r") as document:
     data = document.readlines();
@@ -6,6 +8,7 @@ def read(nombre):
       pass
   return data
 
-# HELOOOOOOOOOOOOO
 
-print(read("datos.txt"))
+def frecuencia(m):
+  f = np.sqrt(500/m)/(2*np.pi)
+  return f
