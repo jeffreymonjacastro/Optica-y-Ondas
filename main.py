@@ -9,7 +9,7 @@ imagen = []
 for x in range(600):
 	imagen.append([])
 	for y in range(600):
-		f = frecuencia(1 if y==0 else y);
+		f = frecuencia(1 if y==0 else y)
 		dibujar = x == round(f)
 		imagen[x].append([0,0,0] if (dibujar) else [255,255,255])
 		pass
