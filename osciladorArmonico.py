@@ -33,8 +33,7 @@ def tabulacion(base_datos, esp=2):
     tabulador = ""
     for fil in range(len(base_datos)):
         for colu in range(len(lis_max)):
-            tabulador += ("{:<" + str(lis_max[colu]) + "} ").format(
-                base_datos[fil][colu])
+            tabulador += ("{:<" + str(lis_max[colu]) + "} ").format(base_datos[fil][colu])
         tabulador += ("\n" if fil != 0 else "\n" + ((len(tabulador) - 3) * "-") + "\n")
     pass
 
