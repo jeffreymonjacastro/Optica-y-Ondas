@@ -1,5 +1,6 @@
 import numpy as np
 import math
+import imageio
 
 def tabulacion(base_datos, esp=2):
 
@@ -49,3 +50,13 @@ def dibujar_Punto(x, y, matriz, grosor, color):
       pass
     pass
   pass
+
+def guardar_imagen(ruta, lista_3d):
+    """
+    La función guardar_imagen recibe una lista de 3
+    dimensiones con el mapa de bits de la imagen
+    y retorna la imagen en formato Dbmp.
+
+    """
+    return imageio.imwrite(ruta, np.array(lista_3d, dtype='uint8'))
+pass
