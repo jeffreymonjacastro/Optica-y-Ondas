@@ -1,15 +1,36 @@
 import numpy as np
-import mathplotlib.pyplot as plt
+import matplotlib.pyplot as plt
 
+
+def tabulacion(base_datos, esp=2):
+    # Definimos listas para añadir la cantidad de caracteres de
+    # todos los elementos y de cada columna
+    lis_max = [esp for x in range(len(base_datos[0]))]
+    for x in range(len(base_datos)):
+        for i in range(len(base_datos[0])):
+            if len(base_datos[x][i]) >= lis_max[i] - esp:
+                lis_max[i] = len(base_datos[x][i]) + esp
+
+    # Ahora automatizamos hacer la cadena de .format
+
+    tabulador = ""
+    for fil in range(len(base_datos)):
+        for colu in range(len(lis_max)):
+            tabulador += ("{:<" + str(lis_max[colu]) + "} ").format(base_datos[fil][colu])
+        tabulador += ("\n" if fil != 0 else "\n" + ((len(tabulador) - 3) * "-") + "\n")
+    pass
+
+    # Por ultimo reemplazamos los datos para que sea tabulado
+    return tabulador
 
 
 def read(nombre):
-  with open(nombre, "r") as document:
-    data = document.readlines();
-    for x in data:
-      x = x.split(";")
-      pass
-  return data
+    with open(nombre, "r") as document:
+        data = document.read().split("\n")
+        for x in range(len(data)):
+            data[x] = data[x].split(";")
+            pass
+    return data
 
 
 def f(n):
@@ -20,12 +41,12 @@ def f(n):
 
 
 def scatter(data):
-    X = []
-    Y = []
+    p_x = []
+    p_y = []
 
     for i in range(1, len(data)):
-      X.append(float(data[i][0]))
-      Y.append(float(data[i][2]))
+        p_x.append(float(data[i][0]))
+        p_y.append(float(data[i][2]))
 
     # Ajuste
     x = np.arange(0.5, 1.01, 0.1)
@@ -33,7 +54,7 @@ def scatter(data):
     plt.plot(x, y, color="b")
 
     # Datos dispersos
-    plt.scatter(X, Y, color="black")
+    plt.scatter(p_x, p_y, color="black")
     plt.title("Frecuencia vs masa")
     plt.xlabel("Masa")
     plt.ylabel("Frecuencia")
@@ -41,6 +62,3 @@ def scatter(data):
     # Guardar la gráfica
     plt.savefig("grafica.png")
     plt.show()
-
-
-scatter(data)

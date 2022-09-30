@@ -1,6 +1,4 @@
-import matplotlib
-import numpy as np
-
+from funciones import *
 
 """
 Experimento (8 puntos)
@@ -17,30 +15,6 @@ Experimento (8 puntos)
     d. Imprima en la línea de comandos los parámetros del ajuste y el tipo de ajuste utilizado.
     e. Guarde el gráfico en formato png con un nombre descriptivo de forma automática (su código debe realizar este paso).
 """
-
-def tabulacion(base_datos, esp=2):
-
-    # Definimos listas para añadir la cantidad de caracteres de
-    # todos los elementos y de cada columna
-    lis_max = [esp for x in range(len(base_datos[0]))]
-    for x in range(len(base_datos)):
-      for i in range(len(base_datos[x])):
-        if len(base_datos[x][i]) > lis_max[i]-esp:
-          lis_max[i] = len(base_datos[x][i])+esp
-
-    # Ahora automatizamos hacer la cadena de .format
-
-    tabulador = ""
-    for fil in range(len(base_datos)):
-        for colu in range(len(lis_max)):
-            tabulador += ("{:<" + str(lis_max[colu]) + "} ").format(base_datos[fil][colu])
-        tabulador += ("\n" if fil != 0 else "\n" + ((len(tabulador) - 3) * "-") + "\n")
-    pass
-
-  
-    # Por ultimo reemplazamos los datos para que sea tabulado
-    return tabulador
-pass
 
 
 # PLANTILLA
@@ -78,3 +52,6 @@ with open("datos.txt", "w") as dataFile:
 
 print("Datos guardados con exito!\n")
 print(tabulacion(data))
+
+# Mostrando la gráfica y descargando la imagen
+scatter(data)
