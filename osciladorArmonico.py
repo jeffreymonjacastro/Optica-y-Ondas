@@ -8,11 +8,10 @@ Experimento (8 puntos)
   4. Repetir los pasos del 1 al 3 para 10 diferentes valores de masa. Todos los valores deben ser distintos y deben diferir entre ellos en por lo menos 10 gramos.
   5. Guarde sus datos en un archivo de texto.
   6. Elabore un programa que:0
-    a. 
-    Lea el archivo de texto generado en el paso 5. 
+    a. Lea el archivo de texto generado en el paso 5. 
     b. Grafique la frecuencia de oscilación del sistema vs la masa del oscilador armónico.
     c. Aplique un ajuste. El tipo de ajuste utilizado queda a su criterio y será parte de la evaluación.
-    d. Imprima en la línea de comandos los parámetros del ajuste y el tipo de ajuste utilizado.
+    d. Imprima en la línea de comandos los parámetros del ajuste y el tipo de ajuste utilizado. (THIS)
     e. Guarde el gráfico en formato png con un nombre descriptivo de forma automática (su código debe realizar este paso).
 """
 
@@ -55,3 +54,5 @@ print(tabulacion(data))
 
 # Mostrando la gráfica y descargando la imagen
 scatter(data)
+
+# El ajuste utilizado fue:

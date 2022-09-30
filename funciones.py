@@ -33,11 +33,11 @@ def read(nombre):
     return data
 
 
-def f(n):
-    if n == 0:
+def f(m):
+    if m == 0:
         return 15
-    f = np.sqrt(500 / n) / (2 * np.pi)
-    return f
+    func = np.sqrt(500 / m) / (2 * np.pi)
+    return func
 
 
 def scatter(data):
