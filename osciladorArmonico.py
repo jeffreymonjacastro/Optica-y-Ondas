@@ -47,35 +47,33 @@ pass
 data = [["masa(kg)", "w", "Frecuencia(Hz)"]]
 
 for x in range(int(input("Cuantos datos va a ingresar: "))):
+    # Definir Constantes
+    k = 500
 
-  # Definir Constantes
-  k = 500
+    # Pedir valor de masa (en gramos) para tensar la cuerda
+    mGramos = input("\nIngrese un valor entero entre 500 y 1000: ")
+    m = float(mGramos)/1000
 
-  # Pedir valor de masa (en gramos) para tensar la cuerda
-  mGramos = input("\nIngrese un valor entero entre 500 y 1000: ")
-  m = float(mGramos)/1000
+    # Calcular los parametros del oscilador
+    w = np.sqrt(k/m)
+    f = w/(2*np.pi)
 
-  # Calcular los parametros del oscilador
-  w = np.sqrt(k/m)
-  f = w/(2*np.pi)
+    w = round(w,2)
+    f = round(f,2)
 
-  w = round(w,2)
-  f = round(f,2)
+    data.append([str(m),str(w),str(f)]);
+    print("La frecuencia de oscilación del sistema es: ", f)
+    print()
 
-  data.append([str(m),str(w),str(f)]);
-  print("La frecuencia de oscilación del sistema es: ", f)
-  print()
-
-  pass
+    pass
 
 #Escribir datos
-
 with open("datos.txt", "w") as dataFile:
-  for x in data:
-    for y in x:
-      dataFile.write(y+";")
-      pass
-    dataFile.write("\n")
+    for x in data:
+        for y in x:
+            dataFile.write(y+(";"if y != x[len(x)-1] else ""))
+            pass
+        dataFile.write("\n"if x!=data[len(data)-1] else "")
     pass
 
 print("Datos guardados con exito!\n")
