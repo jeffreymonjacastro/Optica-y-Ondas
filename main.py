@@ -24,6 +24,14 @@ for y in range(600):
 
 	pass
 
+print(tabulacion(data))
+
+print(frecuencia(float(data[1][0])*1000))
+
+
+for x in range(len(data)-1):
+	dibujar_Punto(int(escala*frecuencia(float(data[x+1][0])*1000)),int(float(data[x+1][0])*1000), imagen, grosor*4, [255,0,0])
+	pass
 
 imagen.reverse()
 
