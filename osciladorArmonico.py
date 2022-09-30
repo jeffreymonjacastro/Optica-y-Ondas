@@ -52,7 +52,15 @@ with open("datos.txt", "w") as dataFile:
 print("Datos guardados con exito!\n")
 print(tabulacion(data))
 
+# Ajuste
+print("Los parámetros del ajuste fueron:")
+print("Eje x: Masa (kg)")
+print("Eje y: Frecuencia (Hz)")
+print()
+print("El tipo de ajuste utilizado corresponde a la función de la frecuencia:")
+print("frecuencia = w/2*pi")
+print("Siendo la frecuencia angular (w) = Constante de resorte (k) / masas del oscilador (m)")
+
+
 # Mostrando la gráfica y descargando la imagen
 scatter(data)
-
-# El ajuste utilizado fue:

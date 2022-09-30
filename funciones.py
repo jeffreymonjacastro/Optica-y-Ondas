@@ -3,6 +3,10 @@ import matplotlib.pyplot as plt
 
 
 def tabulacion(base_datos, esp=2):
+    """
+    Función para imprimir la base de datos de las masas y las frecuencias
+    """
+
     # Definimos listas para añadir la cantidad de caracteres de
     # todos los elementos y de cada columna
     lis_max = [esp for x in range(len(base_datos[0]))]
@@ -25,6 +29,10 @@ def tabulacion(base_datos, esp=2):
 
 
 def read(nombre):
+    """
+    Función para leer los datos de un archivo de texto
+    """
+
     with open(nombre, "r") as document:
         data = document.read().split("\n")
         for x in range(len(data)):
@@ -34,30 +42,45 @@ def read(nombre):
 
 
 def f(m):
+    """
+    Función frecuencia sqrt(k/m)/2*pi
+    """
+
     if m == 0:
         return 15
-    func = np.sqrt(500 / m) / (2 * np.pi)
+
+    k = 500
+
+    func = np.sqrt(k / m) / (2 * np.pi)
     return func
 
 
 def scatter(data):
+    """
+    Función para plotear la gráfica frecuencia vs masa
+    Extrae los datos de la masa y la frecuencia y los plotea con matplotlib
+    Establece la recta de ajuste f(m) - Función f(m)
+    Guarda la gráfica con el nombre "gráfica.png"
+    """
+
     p_x = []
     p_y = []
 
+    # Ingresando los datos del archivo de texto
     for i in range(1, len(data)):
         p_x.append(float(data[i][0]))
         p_y.append(float(data[i][2]))
 
-    # Ajuste
-    x = np.arange(0.5, 1.01, 0.1)
+    # Función de ajuste
+    x = np.arange(min(p_x), max(p_x)+0.1, 0.1)
     y = [f(i) for i in x]
     plt.plot(x, y, color="b")
 
     # Datos dispersos
     plt.scatter(p_x, p_y, color="black")
     plt.title("Frecuencia vs masa")
-    plt.xlabel("Masa")
-    plt.ylabel("Frecuencia")
+    plt.xlabel("Masa (kg)")
+    plt.ylabel("Frecuencia (Hz)")
 
     # Guardar la gráfica
     plt.savefig("grafica.png")
