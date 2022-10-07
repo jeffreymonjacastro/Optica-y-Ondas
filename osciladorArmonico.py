@@ -13,6 +13,8 @@ Experimento (8 puntos)
     e. Guarde el gráfico en formato png con un nombre descriptivo de forma automática (su código debe realizar este paso).
 """
 
+import numpy as np
+
 # PLANTILLA
 data = [["masa(kg)", "w", "Frecuencia(Hz)"]]
 
