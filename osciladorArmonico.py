@@ -1,5 +1,3 @@
-from funciones import *
-
 """
 Experimento (8 puntos)
   1. Ejecute el archivo osciladorArmonico.py.
@@ -8,20 +6,21 @@ Experimento (8 puntos)
   4. Repetir los pasos del 1 al 3 para 10 diferentes valores de masa. Todos los valores deben ser distintos y deben diferir entre ellos en por lo menos 10 gramos.
   5. Guarde sus datos en un archivo de texto.
   6. Elabore un programa que:0
-    a. Lea el archivo de texto generado en el paso 5. 
+    a. Lea el archivo de texto generado en el paso 5.
     b. Grafique la frecuencia de oscilación del sistema vs la masa del oscilador armónico.
     c. Aplique un ajuste. El tipo de ajuste utilizado queda a su criterio y será parte de la evaluación.
     d. Imprima en la línea de comandos los parámetros del ajuste y el tipo de ajuste utilizado. (THIS)
     e. Guarde el gráfico en formato png con un nombre descriptivo de forma automática (su código debe realizar este paso).
 """
 
-
 # PLANTILLA
 data = [["masa(kg)", "w", "Frecuencia(Hz)"]]
 
-for x in range(int(input("Cuantos datos va a ingresar: "))):
+for x in range(10):
     # Definir Constantes
     k = 500
+
+    print(f"Masa {x+1}")
 
     # Pedir valor de masa (en gramos) para tensar la cuerda
     mGramos = input("\nIngrese un valor entero entre 500 y 1000: ")
@@ -31,10 +30,10 @@ for x in range(int(input("Cuantos datos va a ingresar: "))):
     w = np.sqrt(k/m)
     f = w/(2*np.pi)
 
-    w = round(w,2)
-    f = round(f,2)
+    w = round(w, 2)
+    f = round(f, 2)
 
-    data.append([str(m),str(w),str(f)]);
+    data.append([str(m),str(w),str(f)])
     print("La frecuencia de oscilación del sistema es: ", f)
     print()
 
@@ -50,17 +49,3 @@ with open("datos.txt", "w") as dataFile:
     pass
 
 print("Datos guardados con exito!\n")
-print(tabulacion(data))
-
-# Ajuste
-print("Los parámetros del ajuste fueron:")
-print("Eje x: Masa (kg)")
-print("Eje y: Frecuencia (Hz)")
-print()
-print("El tipo de ajuste utilizado corresponde a la función de la frecuencia:")
-print("frecuencia = w/2*pi")
-print("Siendo la frecuencia angular (w) = Constante de resorte (k) / masas del oscilador (m)")
-
-
-# Mostrando la gráfica y descargando la imagen
-scatter(data)

@@ -41,7 +41,11 @@ def read(nombre):
     return data
 
 
-def f(m):
+def obtener_k(m, f):
+    return 4*m*(np.pi**2)*(f**2)
+
+
+def f(m, k):
     """
     Función frecuencia sqrt(k/m)/2*pi
     """
@@ -49,7 +53,6 @@ def f(m):
     if m == 0:
         return 15
 
-    k = 500
 
     func = np.sqrt(k / m) / (2 * np.pi)
     return func
@@ -72,8 +75,15 @@ def scatter(data):
         p_y.append(float(data[i][2]))
 
     # Función de ajuste
-    x = np.arange(min(p_x), max(p_x)+0.1, 0.1)
-    y = [f(i) for i in x]
+    k = obtener_k(p_x[0], p_y[0])
+
+    #Recolectando los valores del eje x
+    x = np.arange(min(p_x), max(p_x)+0.1, 0.001)
+
+    # Recolectandos los valores del eje y
+    y = [f(i, k) for i in x]
+
+    # Ploteando la gráfica de ajuste
     plt.plot(x, y, color="b")
 
     # Datos dispersos
