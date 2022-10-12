@@ -1,23 +1,16 @@
-from funciones import *
-import numpy as np
-import matplotlib.pyplot as plt
-from math import *
+# This is a sample Python script.
 
-data = read("datos.txt")
-imagen = []
+# Press Mayús+F10 to execute it or replace it with your code.
+# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
 
-for x in range(600):
-	imagen.append([])
-	for y in range(600):
-		f = frecuencia(1 if y==0 else y);
-		dibujar = x == round(f)
-		imagen[x].append([0,0,0] if (dibujar) else [255,255,255])
-		pass
-	pass
 
-imagen.reverse()
+def print_hi(name):
+    # Use a breakpoint in the code line below to debug your script.
+    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
 
-imagen = np.array(imagen)
 
-plt.imshow(imagen)
-plt.show()
+# Press the green button in the gutter to run the script.
+if __name__ == '__main__':
+    print_hi('PyCharm')
+
+# See PyCharm help at https://www.jetbrains.com/help/pycharm/

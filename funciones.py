@@ -99,13 +99,14 @@ def scatter(data):
     #     print(f(p_x[i],sum_k))
     #
     # Ploteando la gráfica de ajuste
-    plt.plot(x, y, color="b")
+    plt.plot(x, y, color="b", label="Ajuste")
 
     # Datos dispersos
-    plt.scatter(p_x, p_y, color="black")
+    plt.scatter(p_x, p_y, color="black", label="Datos")
     plt.title("Frecuencia vs masa")
     plt.xlabel("Masa (kg)")
     plt.ylabel("Frecuencia (Hz)")
+    plt.legend()
 
     # Guardar la gráfica
     plt.savefig("grafica de frecuenia vs masa.png")
