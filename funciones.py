@@ -42,7 +42,13 @@ def read(nombre):
 
 
 def obtener_k(m, f):
-    return 4*m*(np.pi**2)*(f**2)
+    # Supuestamente
+    sum_k = 0
+    for i in range(10):
+        sum_k += 4*m[i]*(np.pi**2)*(f[i]**2)
+
+    k = sum_k/10
+    return k
 
 
 def f(m, k):
@@ -75,14 +81,23 @@ def scatter(data):
         p_y.append(float(data[i][2]))
 
     # Función de ajuste
-    k = obtener_k(p_x[0], p_y[0])
+    sum_k = obtener_k(p_x, p_y)
+
+
+
+    print(sum_k)
 
     #Recolectando los valores del eje x
     x = np.arange(min(p_x), max(p_x)+0.1, 0.001)
 
     # Recolectandos los valores del eje y
-    y = [f(i, k) for i in x]
+    y = [f(i, sum_k) for i in x]
 
+
+    # print()
+    # for i in range(10):
+    #     print(f(p_x[i],sum_k))
+    #
     # Ploteando la gráfica de ajuste
     plt.plot(x, y, color="b")
 
@@ -93,5 +108,5 @@ def scatter(data):
     plt.ylabel("Frecuencia (Hz)")
 
     # Guardar la gráfica
-    plt.savefig("grafica.png")
+    plt.savefig("grafica de frecuenia vs masa.png")
     plt.show()
