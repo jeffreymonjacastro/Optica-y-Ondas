@@ -1,0 +1,6 @@
+anuglo incidente;angulo refractado
+10;15
+20;32
+30;49
+40;75
+41;90

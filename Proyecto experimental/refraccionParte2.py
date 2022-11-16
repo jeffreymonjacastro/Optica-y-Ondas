@@ -42,7 +42,7 @@ def graficadora_refraccion1(data):
 refraccion1_datos = read("refraccion1_data.txt")
 
 
-print("Caso 1:")
+print("Caso 2:")
 print("="*20)
 print()
 
