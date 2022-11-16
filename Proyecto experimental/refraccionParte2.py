@@ -47,6 +47,17 @@ refraccion2_datos = read("refraccion2_data.txt")
 
 # Imprimiendo los datos del archivo creado
 print(tabulacion(refraccion2_datos))
+print()
+
+# Resultados
+print("La ecuación de la curva de ajuste parte de la Ley de Snell: sen(θr) = (n1*sen(θi))/n2")
+print("Resultando: y = 1.00029*x/n2")
+print("- x se refiere al sen(θi)\n- y se refiere al sen(θr)\n- n2 se refiere al índice de refracción del cristal")
+print()
+
+print("Comparación:")
+print("La ecuación de la curva de ajuste encaja muy aproximadamente a los datos obtenidos en el laboratorio. Además, tiene coherencia con la teoría, ya que según la Ley de Snell...")
+print()
 
 # Graficando la primera refraccion
 graficadora_refraccion(refraccion2_datos);
