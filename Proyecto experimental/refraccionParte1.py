@@ -1,8 +1,8 @@
 from funciones import *
 import math
 
-def leySnell(angulo_incidente, n1, n2):
-    return (n1*math.sin(angulo_incidente)/n2);
+def leySnell(x, n1, n2):
+    return (n1*x/n2);
 
 
 def graficadora_refraccion1(data):
