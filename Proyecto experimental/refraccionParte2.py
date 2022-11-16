@@ -5,7 +5,7 @@ def leySnell(x, n2):
     return (1.00029*x/n2); #indice de refraccioin del aire (1.00029)
 
 
-def graficadora_refraccion1(data):
+def graficadora_refraccion(data):
     p_x = [];
     p_y = [];
 
@@ -19,7 +19,7 @@ def graficadora_refraccion1(data):
 
     res, cov = curve_fit(leySnell,x,y);
 
-    print("Indice de refraccion del cristal en forma de D: " + str(res[0]));
+    print("Indice de refraccion del cristal en forma de D: " + str(round(res[0], 2)))
 
 
     # Datos dispersos
@@ -32,22 +32,21 @@ def graficadora_refraccion1(data):
 
 
     plt.title("Grafica de angulos de refraccion (Parte 1)")
-    plt.plot(x0, leySnell(x0,res[0]), color="r", label="Ajuste")
+    plt.plot(x0, leySnell(x0,res[0]), color="b", label="Ajuste")
 
     plt.legend()
     plt.show()
-
-
-# Leer datos desde el archivo creado
-refraccion1_datos = read("refraccion1_data.txt")
 
 
 print("Caso 2:")
 print("="*20)
 print()
 
+# Leer datos desde el archivo creado
+refraccion2_datos = read("refraccion2_data.txt")
+
 # Imprimiendo los datos del archivo creado
-print(tabulacion(refraccion1_datos))
+print(tabulacion(refraccion2_datos))
 
-graficadora_refraccion1(refraccion1_datos);
-
+# Graficando la primera refraccion
+graficadora_refraccion(refraccion2_datos);

@@ -22,7 +22,7 @@ def graficadora_refraccion(data):
     res, cov = curve_fit(leySnell,x,y);
 
     # Calculando el índice de refracción del material
-    print("Indice de refraccion del cristal en forma de D: " + str(res[0]));
+    print("Indice de refraccion del cristal en forma de D: " + str(round(res[0],2)))
 
     # Datos dispersos
     plt.scatter(p_x, p_y, color="black", label="Datos");
@@ -48,20 +48,8 @@ refraccion1_datos = read("refraccion1_data.txt")
 
 # Imprimiendo los datos del archivo creado
 print(tabulacion(refraccion1_datos))
-
-# Graficando la primera refraccion
-graficadora_refraccion(refraccion1_datos);
-
-
-print("Caso 2:")
-print("="*20)
 print()
 
-# Leer datos desde el archivo creado
-refraccion2_datos = read("refraccion2_data.txt")
-
-# Imprimiendo los datos del archivo creado
-print(tabulacion(refraccion2_datos))
 
 # Graficando la primera refraccion
-graficadora_refraccion(refraccion2_datos);
+graficadora_refraccion(refraccion1_datos)
