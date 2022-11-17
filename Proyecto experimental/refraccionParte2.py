@@ -1,9 +1,10 @@
 from funciones import *
 import math
 
-def leySnell(x, n2):
-    return (1.00029*x/n2); #indice de refraccioin del aire (1.00029)
-
+def leySnell(x, n1):
+    #n1*x = n2*y  << n1 indice del cristal << n2 indice del aire
+    #n1*x/n2 = y;
+    return (n1*x/1.00029); #indice de refraccioin del aire (1.00029)
 
 def graficadora_refraccion(data):
     p_x = [];
