@@ -40,8 +40,9 @@ def graficadora_refraccion(data):
     plt.show()
 
 
+print("="*36)
 print("Caso 1:")
-print("="*20)
+print("="*36)
 print()
 
 # Leer datos desde el archivo creado
@@ -52,9 +53,16 @@ print(tabulacion(refraccion1_datos))
 print()
 
 # Resultados
-print("La ecuación de la curva de ajuste parte de la Ley de Snell: sen(θr) = (n1*sen(θi))/n2")
+print("La ecuación de la curva de ajuste parte de la Ley de Snell: n2*sen(θr) = n1*sen(θi)")
+print()
+print("Donde:")
+print("- n1: indice de refraccion del aire (1.00029)")
+print("- n2: indice de refraccion del cristal")
+print("- θi: angulo de incidencia")
+print("- θr: angulo de refraccion")
+print()
 print("Resultando: y = 1.00029*x/n2")
-print("- x se refiere al sen(θi)\n- y se refiere al sen(θr)\n- n2 se refiere al índice de refracción del cristal")
+print("- x se refiere al sen(θi)\n- y se refiere al sen(θr)")
 print()
 
 print("Comparación:")

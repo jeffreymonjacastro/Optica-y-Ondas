@@ -38,11 +38,10 @@ def graficadora_refraccion(data):
     plt.legend()
     plt.show()
 
-
-print("Caso 2:")
-print("="*20)
+print("="*36)
+print("CASO 2:")
+print("="*36)
 print()
-
 # Leer datos desde el archivo creado
 refraccion2_datos = read("refraccion2_data.txt")
 
@@ -51,13 +50,20 @@ print(tabulacion(refraccion2_datos))
 print()
 
 # Resultados
-print("La ecuación de la curva de ajuste parte de la Ley de Snell: sen(θr) = (n1*sen(θi))/n2")
-print("Resultando: y = 1.00029*x/n2")
-print("- x se refiere al sen(θi)\n- y se refiere al sen(θr)\n- n2 se refiere al índice de refracción del cristal")
+print("La ecuación de la curva de ajuste parte de la Ley de Snell: n2*sen(θr) = n1*sen(θi)")
+print()
+print("Donde:")
+print("- n2: indice de refraccion del aire")
+print("- n1: indice de refraccion del cristal")
+print("- θi: angulo de incidencia")
+print("- θr: angulo de refraccion")
+print()
+print("Resultando: y = n1*x/1.00029")
+print("- x se refiere al sen(θi)\n- y se refiere al sen(θr)")
 print()
 
 print("Comparación:")
-print("La ecuación de la curva de ajuste encaja muy aproximadamente a los datos obtenidos en el laboratorio. Además, tiene coherencia con la teoría, ya que según la Ley de Snell...")
+print("La ecuación de la curva de ajuste encaja muy aproximadamente a los datos obtenidos en el laboratorio. Además, concuerda con el primer experimento 'refraccionParte1.py' donde se deduce que el índice de refracción del cristal es de 1.5 aproximadamente")
 print()
 
 # Graficando la primera refraccion
