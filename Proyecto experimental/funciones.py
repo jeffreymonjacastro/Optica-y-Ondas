@@ -14,8 +14,8 @@ def tabulacion(base_datos, esp=2):
 
     for i in range(len(base_datos)):
         for j in range(len(base_datos[0])):
-            if len(base_datos[i][j]) >= lis_max[j] - esp:
-                lis_max[j] = len(base_datos[i][j]) + esp
+            if len(str(base_datos[i][j])) >= lis_max[j] - esp:
+                lis_max[j] = len(str(base_datos[i][j])) + esp
 
     # Ahora automatizamos hacer la cadena de .format
 
